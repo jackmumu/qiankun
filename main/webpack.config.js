@@ -38,5 +38,18 @@ module.exports = {
   plugins: [new VueLoaderPlugin()],
   devServer: {
     port: 3000,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    allowedHosts: "all",
+    compress: true,
+    client: {
+      logging: "info", // 配置客户端日志级别
+      overlay: {
+        warnings: false,
+        errors: true,
+      },
+    },
   },
 };
