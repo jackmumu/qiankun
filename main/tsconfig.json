@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "sourceMap": true,
+    "types": ["vue"]
+  }
+}
