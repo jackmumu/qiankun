@@ -24,10 +24,12 @@ const appList = ["vue2", "vue3", "react18"];
 }
 .container {
   flex: 1;
+  padding: 20px;
 }
 html,
 body,
-#app {
+#app,
+.main {
   margin: 0;
   padding: 0;
   width: 100%;

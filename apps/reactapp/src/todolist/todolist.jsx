@@ -1,6 +1,6 @@
 import { useState, createContext, useContext } from "react";
+import {Header, Bottom} from "./components";
 const ListContext = createContext();
-
 // 创建一个React组件
 const ToDoList = () => {
   return (
@@ -11,14 +11,6 @@ const ToDoList = () => {
   );
 };
 
-
-const Header = () => {
-  return (
-    <h1>
-      ToDoList<span>222</span>
-    </h1>
-  );
-};
 const Content = () => {
   const [list, setList] = useState([]);
   const [finishedList, setFinishedList] = useState([]);
@@ -31,17 +23,11 @@ const Content = () => {
     >
       <Top></Top>
       <View></View>
-      <Bottom></Bottom>
+      <Bottom ListContext={ListContext}></Bottom>
     </ListContext.Provider>
   );
 };
-const Bottom = () => {
-  const { setFinishedList, finishedList } = useContext(ListContext);
-  const children = finishedList.map((i, index) => (
-    <div key={index}>已完成:{i}</div>
-  ));
-  return <div>{children}</div>;
-};
+
 const View = () => {
   const { list, setFinishedList, finishedList } = useContext(ListContext);
   const [hoverIndex, setHoverIndex] = useState(-1);
