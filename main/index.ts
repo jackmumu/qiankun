@@ -16,6 +16,13 @@ registerMicroApps([
     loader: vueRender,
     activeRule: "/vue3",
   },
+  {
+    name: "react18",
+    entry: "//localhost:3003",
+    container: "#container",
+    loader: vueRender,
+    activeRule: "/react18",
+  },
 ]);
 setDefaultMountApp("/vue2");
 start();

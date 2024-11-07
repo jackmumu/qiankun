@@ -12,10 +12,9 @@
 const push = (subapp: any) => {
   history.pushState(null, subapp, subapp);
 };
-const appList = ["vue2", "vue3", "react"];
+const appList = ["vue2", "vue3", "react18"];
 </script>
 <style>
-
 .main {
   display: flex;
 }
@@ -26,7 +25,9 @@ const appList = ["vue2", "vue3", "react"];
 .container {
   flex: 1;
 }
-html, body, #app {
+html,
+body,
+#app {
   margin: 0;
   padding: 0;
   width: 100%;
