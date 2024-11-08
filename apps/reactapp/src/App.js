@@ -1,4 +1,5 @@
 import "./App.scss";
+import ToDoList from "./components/TodoList";
 
 function App() {
   return <ToDoList> </ToDoList>;
