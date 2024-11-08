@@ -4,8 +4,10 @@ const getCurrentDate = () => {
 };
 const Header = () => {
     return (
-      <header>
-        {getCurrentDate()}
+      <header className="lql-header">
+        <span className="lql-header__title">
+          {getCurrentDate()}
+        </span>
       </header>
     );
   };

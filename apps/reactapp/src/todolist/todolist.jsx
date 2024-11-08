@@ -1,14 +1,14 @@
 import { useState, createContext, useContext } from "react";
 import {Header, Bottom} from "./components";
-import {} from "ui"
+import { Input } from 'antd';
 const ListContext = createContext();
 // 创建一个React组件
 const ToDoList = () => {
   return (
-    <>
+    <div className="lql-todolist">
       <Header></Header>
       <Content></Content>
-    </>
+    </div>
   );
 };
 
@@ -56,10 +56,7 @@ const View = () => {
       </div>
     );
   });
-  const style = {
-    paddingLeft: "8px",
-  };
-  return <div style={style}>{children}</div>;
+  return <div>{children}</div>;
 };
 const Top = () => {
   const { addItem } = useContext(ListContext);
@@ -67,10 +64,9 @@ const Top = () => {
     const value = document.querySelector("input").value;
     addItem(value);
   };
-  const style = { display: "flex" };
   return (
-    <div style={style}>
-      <input type="text" />
+    <div className="lql-top">
+      <Input type="text" />
       <div onClick={commit}>提交</div>
     </div>
   );
