@@ -38,7 +38,13 @@ body,
 }
 @include b("top") {
   display: flex;
+  position: relative;
   input {
-    width: 160px;
+    width: 200px;
+  }
+  @include e("commit"){
+    position: absolute;
+    right: 10px;
+    top: 3px;
   }
 }

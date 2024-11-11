@@ -1,5 +1,6 @@
 import { useState, createContext, useContext } from "react";
 import {Header, Bottom} from "./components";
+import { Radio} from 'antd'
 import { Input } from 'antd';
 const ListContext = createContext();
 // 创建一个React组件
@@ -47,7 +48,7 @@ const View = () => {
           setHoverIndex(-1);
         }}
       >
-        待完成： {i}
+        <Radio></Radio> {i}
         {hoverIndex === index && (
           <span onClick={addFinsih} style={{ marginLeft: "30px" }}>
             ✔
@@ -60,14 +61,21 @@ const View = () => {
 };
 const Top = () => {
   const { addItem } = useContext(ListContext);
+  const [value, setValue] = useState("");
   const commit = () => {
-    const value = document.querySelector("input").value;
     addItem(value);
+    setValue("");
   };
+  const onChange = (event) => {
+    setValue(event.target.value);
+  }
+  const Commit = () => {
+    if(value) return ( <div className="lql-top__commit" onClick={commit}>提交</div>)
+  }
   return (
     <div className="lql-top">
-      <Input type="text" />
-      <div onClick={commit}>提交</div>
+      <Input type="text"  value={value} onChange={onChange}/>
+      <Commit></Commit>
     </div>
   );
 };
