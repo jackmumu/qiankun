@@ -13,9 +13,15 @@ import HelloWorld from "./components/HelloWorld.vue";
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  mounted() {
+    if (__DEV__) {
+      console.log("dev mode");
+    } else {
+      console.log("prod mode");
+    }
+  }
+}
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

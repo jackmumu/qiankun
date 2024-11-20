@@ -1,5 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
+const webpack = require("webpack"); // 导入 webpack 模块
 module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
@@ -8,6 +9,11 @@ module.exports = defineConfig({
         "@": path.resolve(__dirname, "src"),
       },
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        __DEV__: JSON.stringify(process.env.NODE_ENV === "development"),
+      }),
+    ],
   },
   css: {
     loaderOptions: {
